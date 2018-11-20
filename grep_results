@@ -1,0 +1,54 @@
+#!/bin/bash
+
+FILE=[your file name here]
+FILE2=[name of your file]
+
+echo "start virus..."
+#known graft transmissible viruses
+grep -i "citrus tristeza virus" $FILE > virus_file.txt
+grep -i "citrus psorosis virus" $FILE >> virus_file.txt
+grep -i "citrus leaf blotch virus" $FILE >> virus_file.txt
+#ctlv has multiple names
+grep -i "citrus tatter leaf virus" $FILE >> virus_file.txt
+grep -i "apple stem grooving virus" $FILE >> virus_file.txt
+grep -i "dweet mottle virus" $FILE >> virus_file.txt
+grep -i "citrus leprosis virus" $FILE >> virus_file.txt
+grep -i "citrus chlorotic dwarf virus" $FILE >> virus_file.txt
+grep -i "satsuma dwarf virus" $FILE >> virus_file.txt
+grep -i "citrus vein enation virus" $FILE >> virus_file.txt
+grep -i "citrus yellow mosaic virus" $FILE >> virus_file.txt
+grep -i "citrus yellow vein clearning virus" $FILE >> virus_file.txt
+#CVV has multiple names 
+grep -i "citrus variegation virus" $FILE >> virus_file.txt
+grep -i "citrus leaf rugose virus" $FILE >> virus_file.txt
+grep -i "citrus crinkly leaf virus" $FILE >> virus_file.txt
+
+echo "end virus... starting viroid..."
+
+#known citrus viroids
+grep -i "viroid" $FILE > viroid_file.txt
+
+echo "end viroid... starting spiroplasma..."
+
+grep -i "spiroplasma" $FILE > sp_file.txt
+
+echo "end spiroplasma... starting xylella..."
+
+grep -i "xylella" $FILE > xylella_file.txt
+
+echo "end xylella... starting candidatus..."
+
+grep -i "candidatus" $FILE > can_file.txt
+
+echo "end xylella... starting phytoplasma..."
+
+grep -i "phytoplasma" $FILE > phyto_file.txt
+
+echo "end phytoplasma... moving files..."
+
+mkdir ./final_[$FILE2]_results
+
+mv *_file.txt final_[$FILE2]_results
+
+echo "complete!"
+
